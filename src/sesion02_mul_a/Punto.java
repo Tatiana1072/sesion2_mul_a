@@ -27,6 +27,15 @@ return new punto();*/
     public Punto ( ){
 }
     public punto polar_cartesiano (float radio, float angulo ){ // tipo punto para que devuelva un punto
+        float x = radio * (float)Math.cos(angulo);
+        float y = radio * (float)Math.sin(angulo);
+        Cartesiana r=new Cartesiana(x, y); //esta es la otra forma de hacer
+        return r;
 }
+    public Polar cartesiano_polar(float x, float y) { //reciba un carteciano y retorne un polar
+        float radio = (float)Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2)); 
+        float angulo = (float)Math.tan(y/x);  
+        return new Polar(radio, angulo);
+    }
     
 
